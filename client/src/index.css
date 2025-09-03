@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(25, 30%, 97%);
+  --foreground: hsl(220, 15%, 20%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(220, 15%, 20%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(220, 15%, 20%);
+  --primary: hsl(355, 70%, 50%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(340, 60%, 80%);
+  --secondary-foreground: hsl(220, 15%, 20%);
+  --muted: hsl(340, 30%, 95%);
+  --muted-foreground: hsl(220, 15%, 45%);
+  --accent: hsl(45, 90%, 70%);
+  --accent-foreground: hsl(220, 15%, 20%);
+  --destructive: hsl(0, 70%, 50%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(340, 20%, 90%);
+  --input: hsl(340, 20%, 90%);
+  --ring: hsl(355, 70%, 50%);
+  --chart-1: hsl(355, 70%, 50%);
+  --chart-2: hsl(340, 60%, 80%);
+  --chart-3: hsl(45, 90%, 70%);
+  --chart-4: hsl(147, 78%, 42%);
+  --chart-5: hsl(341, 75%, 51%);
+  --sidebar: hsl(0, 0%, 100%);
+  --sidebar-foreground: hsl(220, 15%, 20%);
+  --sidebar-primary: hsl(355, 70%, 50%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(340, 30%, 95%);
+  --sidebar-accent-foreground: hsl(355, 70%, 50%);
+  --sidebar-border: hsl(340, 20%, 90%);
+  --sidebar-ring: hsl(355, 70%, 50%);
+  --font-sans: Inter, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --font-hindi: "Noto Sans Devanagari", sans-serif;
+  --radius: 12px;
+  --shadow-2xs: 0px 2px 0px 0px hsl(355, 70%, 50%, 0.05);
+  --shadow-xs: 0px 2px 0px 0px hsl(355, 70%, 50%, 0.05);
+  --shadow-sm: 0px 2px 0px 0px hsl(355, 70%, 50%, 0.05), 0px 1px 2px -1px hsl(355, 70%, 50%, 0.1);
+  --shadow: 0px 2px 0px 0px hsl(355, 70%, 50%, 0.05), 0px 1px 2px -1px hsl(355, 70%, 50%, 0.1);
+  --shadow-md: 0px 2px 0px 0px hsl(355, 70%, 50%, 0.05), 0px 2px 4px -1px hsl(355, 70%, 50%, 0.1);
+  --shadow-lg: 0px 2px 0px 0px hsl(355, 70%, 50%, 0.05), 0px 4px 6px -1px hsl(355, 70%, 50%, 0.1);
+  --shadow-xl: 0px 2px 0px 0px hsl(355, 70%, 50%, 0.05), 0px 8px 10px -1px hsl(355, 70%, 50%, 0.1);
+  --shadow-2xl: 0px 2px 0px 0px hsl(355, 70%, 50%, 0.05);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: hsl(220, 15%, 8%);
+  --foreground: hsl(340, 30%, 95%);
+  --card: hsl(220, 15%, 12%);
+  --card-foreground: hsl(340, 30%, 95%);
+  --popover: hsl(220, 15%, 12%);
+  --popover-foreground: hsl(340, 30%, 95%);
+  --primary: hsl(355, 70%, 60%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(340, 60%, 30%);
+  --secondary-foreground: hsl(340, 30%, 95%);
+  --muted: hsl(220, 15%, 15%);
+  --muted-foreground: hsl(220, 15%, 65%);
+  --accent: hsl(45, 90%, 60%);
+  --accent-foreground: hsl(220, 15%, 8%);
+  --destructive: hsl(0, 70%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(220, 15%, 20%);
+  --input: hsl(220, 15%, 20%);
+  --ring: hsl(355, 70%, 60%);
+  --sidebar: hsl(220, 15%, 12%);
+  --sidebar-foreground: hsl(340, 30%, 95%);
+  --sidebar-primary: hsl(355, 70%, 60%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(220, 15%, 15%);
+  --sidebar-accent-foreground: hsl(355, 70%, 60%);
+  --sidebar-border: hsl(220, 15%, 20%);
+  --sidebar-ring: hsl(355, 70%, 60%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .font-hindi {
+    font-family: var(--font-hindi);
+  }
+
+  .poetry-gradient {
+    background: linear-gradient(135deg, hsl(355, 70%, 50%, 0.1), hsl(340, 60%, 80%, 0.1));
+  }
+
+  .romantic-shadow {
+    box-shadow: 0 10px 30px hsl(355, 70%, 50%, 0.1);
+  }
+
+  .floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .heart-float {
+    position: absolute;
+    font-size: 20px;
+    color: var(--primary);
+    opacity: 0.6;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .heart-float:nth-child(2) { left: 20%; animation-delay: 1s; }
+  .heart-float:nth-child(3) { left: 40%; animation-delay: 2s; }
+  .heart-float:nth-child(4) { left: 60%; animation-delay: 0.5s; }
+  .heart-float:nth-child(5) { left: 80%; animation-delay: 1.5s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  .animate-heart-beat {
+    animation: heartBeat 1.5s ease-in-out infinite;
+  }
+}
