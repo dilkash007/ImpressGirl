@@ -64,7 +64,7 @@ app.use((req, res, next) => {
   const maxPort = currentPort + 5; // Try up to 5 ports if default is in use
 
   const startServer = () => {
-    server.listen(currentPort, "localhost", () => {
+    server.listen(currentPort, "0.0.0.0", () => {
       log(`serving on port ${currentPort}`);
     }).on('error', (err: NodeJS.ErrnoException) => {
       if (err.code === 'EADDRINUSE' && currentPort < maxPort) {
