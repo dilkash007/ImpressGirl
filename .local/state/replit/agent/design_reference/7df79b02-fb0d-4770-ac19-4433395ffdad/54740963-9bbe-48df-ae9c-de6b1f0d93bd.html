@@ -1,0 +1,551 @@
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Shayari for Alka ❤️</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                borderRadius: {
+                    lg: "var(--radius)",
+                    md: "calc(var(--radius) - 2px)",
+                    sm: "calc(var(--radius) - 4px)",
+                },
+                colors: {
+                    background: "var(--background)",
+                    foreground: "var(--foreground)",
+                    card: {
+                        DEFAULT: "var(--card)",
+                        foreground: "var(--card-foreground)",
+                    },
+                    primary: {
+                        DEFAULT: "var(--primary)",
+                        foreground: "var(--primary-foreground)",
+                    },
+                    secondary: {
+                        DEFAULT: "var(--secondary)",
+                        foreground: "var(--secondary-foreground)",
+                    },
+                    muted: {
+                        DEFAULT: "var(--muted)",
+                        foreground: "var(--muted-foreground)",
+                    },
+                    accent: {
+                        DEFAULT: "var(--accent)",
+                        foreground: "var(--accent-foreground)",
+                    },
+                    destructive: {
+                        DEFAULT: "var(--destructive)",
+                        foreground: "var(--destructive-foreground)",
+                    },
+                    border: "var(--border)",
+                    ring: "var(--ring)",
+                },
+                fontFamily: {
+                    sans: ["var(--font-sans)"],
+                    serif: ["var(--font-serif)"],
+                }
+            },
+        }
+    };
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --background: hsl(330 30% 8%);
+            --foreground: hsl(330 5% 95%);
+            --card: hsl(330 25% 12%);
+            --card-foreground: hsl(330 5% 90%);
+            --primary: hsl(340 75% 45%);
+            --primary-foreground: hsl(330 5% 95%);
+            --secondary: hsl(320 40% 25%);
+            --secondary-foreground: hsl(330 5% 95%);
+            --muted: hsl(330 20% 15%);
+            --muted-foreground: hsl(330 5% 70%);
+            --accent: hsl(45 85% 60%);
+            --accent-foreground: hsl(330 30% 8%);
+            --destructive: hsl(0 75% 55%);
+            --destructive-foreground: hsl(330 5% 95%);
+            --border: hsl(330 20% 20%);
+            --ring: hsl(340 75% 45%);
+            --radius: 12px;
+            --font-sans: 'Inter', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+        
+        .romantic-gradient {
+            background: linear-gradient(135deg, hsl(330 30% 8%) 0%, hsl(340 40% 12%) 50%, hsl(320 35% 10%) 100%);
+        }
+        
+        .poetry-card {
+            background: linear-gradient(145deg, hsla(330 25% 12% / 0.9), hsla(340 30% 15% / 0.8));
+            backdrop-filter: blur(10px);
+            border: 1px solid hsla(340 50% 40% / 0.3);
+        }
+        
+        .floating-heart {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .romantic-text {
+            font-family: 'Playfair Display', serif;
+            line-height: 1.8;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .heart-particle {
+            position: absolute;
+            color: hsl(340 75% 60%);
+            pointer-events: none;
+            animation: heartFloat 4s linear infinite;
+        }
+        
+        @keyframes heartFloat {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) scale(1); opacity: 0; }
+        }
+        
+        .poetry-section {
+            display: none;
+        }
+        
+        .poetry-section.active {
+            display: block;
+        }
+        
+        .nav-item {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item:hover {
+            transform: scale(1.1);
+            color: hsl(45 85% 60%);
+        }
+        
+        .romantic-border {
+            border-image: linear-gradient(45deg, hsl(340 75% 45%), hsl(45 85% 60%), hsl(340 75% 45%)) 1;
+        }
+    </style>
+</head>
+<body class="romantic-gradient min-h-screen text-foreground overflow-x-hidden">
+    <!-- Floating Hearts Background -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="floating-heart absolute top-10 left-10 text-primary text-2xl">💖</div>
+        <div class="floating-heart absolute top-20 right-16 text-accent text-lg" style="animation-delay: -1s;">✨</div>
+        <div class="floating-heart absolute top-40 left-1/4 text-primary text-xl" style="animation-delay: -2s;">💕</div>
+        <div class="floating-heart absolute top-60 right-1/3 text-accent text-2xl" style="animation-delay: -0.5s;">🌹</div>
+        <div class="floating-heart floating-heart absolute top-80 left-20 text-primary text-lg" style="animation-delay: -1.5s;">💝</div>
+    </div>
+
+    <!-- Header -->
+    <header class="relative z-10 p-4 text-center border-b border-border">
+        <h1 class="text-3xl md:text-4xl font-serif font-bold text-accent mb-2">
+            <i class="fas fa-heart text-primary mr-2"></i>
+            Alka के लिए प्यार भरी शायरी
+            <i class="fas fa-heart text-primary ml-2"></i>
+        </h1>
+        <p class="text-muted-foreground text-sm font-light">मेरे दिल की हर धड़कन में बसी तुम्हारी यादें</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="relative z-10 p-4 flex flex-wrap justify-center gap-2 border-b border-border">
+        <div class="nav-buttons flex flex-wrap justify-center gap-2 max-w-md mx-auto">
+            <button onclick="showPoetry(1)" class="nav-item bg-primary text-primary-foreground px-3 py-2 rounded-full text-xs font-medium">
+                <i class="fas fa-heart mr-1"></i> पहला प्यार
+            </button>
+            <button onclick="showPoetry(2)" class="nav-item bg-secondary text-secondary-foreground px-3 py-2 rounded-full text-xs">
+                <i class="fas fa-rose mr-1"></i> खुशबू
+            </button>
+            <button onclick="showPoetry(3)" class="nav-item bg-secondary text-secondary-foreground px-3 py-2 rounded-full text-xs">
+                <i class="fas fa-moon mr-1"></i> चांदनी रात
+            </button>
+            <button onclick="showPoetry(4)" class="nav-item bg-secondary text-secondary-foreground px-3 py-2 rounded-full text-xs">
+                <i class="fas fa-star mr-1"></i> सपने
+            </button>
+            <button onclick="showPoetry(5)" class="nav-item bg-secondary text-secondary-foreground px-3 py-2 rounded-full text-xs">
+                <i class="fas fa-sun mr-1"></i> सुबह
+            </button>
+            <button onclick="showPoetry(6)" class="nav-item bg-secondary text-secondary-foreground px-3 py-2 rounded-full text-xs">
+                <i class="fas fa-cloud mr-1"></i> बारिश
+            </button>
+            <button onclick="showPoetry(7)" class="nav-item bg-secondary text-secondary-foreground px-3 py-2 rounded-full text-xs">
+                <i class="fas fa-music mr-1"></i> गीत
+            </button>
+            <button onclick="showPoetry(8)" class="nav-item bg-secondary text-secondary-foreground px-3 py-2 rounded-full text-xs">
+                <i class="fas fa-eye mr-1"></i> नजरें
+            </button>
+            <button onclick="showPoetry(9)" class="nav-item bg-secondary text-secondary-foreground px-3 py-2 rounded-full text-xs">
+                <i class="fas fa-hands-holding-heart mr-1"></i> वादे
+            </button>
+            <button onclick="showPoetry(10)" class="nav-item bg-secondary text-secondary-foreground px-3 py-2 rounded-full text-xs">
+                <i class="fas fa-infinity mr-1"></i> हमेशा
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-10 p-4 max-w-2xl mx-auto">
+        <!-- Poetry Section 1 -->
+        <div id="poetry-1" class="poetry-section active">
+            <div class="poetry-card rounded-lg p-6 mb-6 fade-in">
+                <!-- A romantic silhouette of couple against sunset sky -->
+                <div class="relative h-48 mb-6 rounded-lg overflow-hidden">
+                    <img src="https://pixabay.com/get/g48cd0dabe7e32f6aacaa76144da125d5cdde43e6fa36d0525b226b3922074285b675715657038138fcc965bd7f90f109f34ccb0331d2d94421001739414fa267_1280.jpg" alt="Romantic couple silhouette" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
+                <h2 class="text-2xl font-serif font-bold text-accent mb-4 text-center">पहली मुलाकात</h2>
+                <div class="romantic-text text-center space-y-3">
+                    <p class="text-lg">जब पहली बार देखा था तुम्हें Alka,</p>
+                    <p class="text-lg">लगा जैसे मिल गया हो अपना सबकुछ</p>
+                    <p class="text-lg text-accent">तुम्हारी आंखों में छुपे थे हजारों सवाल,</p>
+                    <p class="text-lg">और मेरे दिल में था बस एक जवाब - प्यार</p>
+                    <p class="text-sm text-muted-foreground mt-4 italic">~ Alka के नाम, दिल से</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Poetry Section 2 -->
+        <div id="poetry-2" class="poetry-section">
+            <div class="poetry-card rounded-lg p-6 mb-6 fade-in">
+                <!-- Beautiful red roses in romantic lighting -->
+                <div class="relative h-48 mb-6 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Red roses bouquet" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                </div>
+                <h2 class="text-2xl font-serif font-bold text-accent mb-4 text-center">तुम्हारी खुशबू</h2>
+                <div class="romantic-text text-center space-y-3">
+                    <p class="text-lg">हवाओं में महकती है Alka तुम्हारी खुशबू,</p>
+                    <p class="text-lg">जैसे गुलाबों की बगिया हो खिली</p>
+                    <p class="text-lg text-accent">हर सांस में बसी है तुम्हारी यादें,</p>
+                    <p class="text-lg">और हर धड़कन में तुम्हारा प्यार</p>
+                    <p class="text-sm text-muted-foreground mt-4 italic">~ Alka के लिए विशेष</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Poetry Section 3 -->
+        <div id="poetry-3" class="poetry-section">
+            <div class="poetry-card rounded-lg p-6 mb-6 fade-in">
+                <!-- Moonlit night with romantic atmosphere -->
+                <div class="relative h-48 mb-6 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1502134249126-9f3755a50d78?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Moonlit romantic night" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
+                <h2 class="text-2xl font-serif font-bold text-accent mb-4 text-center">चांदनी रात</h2>
+                <div class="romantic-text text-center space-y-3">
+                    <p class="text-lg">चांद की रोशनी में Alka तुम्हारा चेहरा,</p>
+                    <p class="text-lg">लगता है जैसे कोई फरिश्ता हो</p>
+                    <p class="text-lg text-accent">रात के सन्नाटे में सुनाई देती है,</p>
+                    <p class="text-lg">तुम्हारे प्यार की सरगोशियां</p>
+                    <p class="text-sm text-muted-foreground mt-4 italic">~ चांदनी रातों में Alka को याद करते हुए</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Poetry Section 4 -->
+        <div id="poetry-4" class="poetry-section">
+            <div class="poetry-card rounded-lg p-6 mb-6 fade-in">
+                <!-- Dreamy starry night sky -->
+                <div class="relative h-48 mb-6 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Starry night sky" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                </div>
+                <h2 class="text-2xl font-serif font-bold text-accent mb-4 text-center">सपनों की रानी</h2>
+                <div class="romantic-text text-center space-y-3">
+                    <p class="text-lg">हर रात सपनों में आती हो Alka,</p>
+                    <p class="text-lg">जैसे तारों की रानी हो तुम</p>
+                    <p class="text-lg text-accent">आंखें बंद करूं तो दिखती हो,</p>
+                    <p class="text-lg">आंखें खोलूं तो याद आती हो</p>
+                    <p class="text-sm text-muted-foreground mt-4 italic">~ Alka के सपनों में खोया हुआ</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Poetry Section 5 -->
+        <div id="poetry-5" class="poetry-section">
+            <div class="poetry-card rounded-lg p-6 mb-6 fade-in">
+                <!-- Beautiful sunrise over landscape -->
+                <div class="relative h-48 mb-6 rounded-lg overflow-hidden">
+                    <img src="https://pixabay.com/get/gdbe20eac499cfb6dd7c3193bfaa5ca6f4797d7d654798bcda0927ba8bb8b273f9c07ba2b84e38ccc1540a601e902c5aa018cf525c0618c44d151fea1b18eb9ee_1280.jpg" alt="Beautiful sunrise" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                </div>
+                <h2 class="text-2xl font-serif font-bold text-accent mb-4 text-center">सुबह की शुरुआत</h2>
+                <div class="romantic-text text-center space-y-3">
+                    <p class="text-lg">सुबह की पहली किरण जब आती है,</p>
+                    <p class="text-lg">Alka तुम्हारी याद साथ लाती है</p>
+                    <p class="text-lg text-accent">हर नया दिन तुम्हारे साथ शुरू होता है,</p>
+                    <p class="text-lg">और तुम्हारे प्यार में खत्म होता है</p>
+                    <p class="text-sm text-muted-foreground mt-4 italic">~ हर सुबह Alka को याद करते हुए</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Poetry Section 6 -->
+        <div id="poetry-6" class="poetry-section">
+            <div class="poetry-card rounded-lg p-6 mb-6 fade-in">
+                <!-- Romantic rain scene -->
+                <div class="relative h-48 mb-6 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1507160874687-6fe86a78b22e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Romantic rain scene" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
+                <h2 class="text-2xl font-serif font-bold text-accent mb-4 text-center">बारिश का मौसम</h2>
+                <div class="romantic-text text-center space-y-3">
+                    <p class="text-lg">बारिश की बूंदों में Alka तुम्हारी आवाज,</p>
+                    <p class="text-lg">हर बूंद में छुपा है तुम्हारा प्यार</p>
+                    <p class="text-lg text-accent">भीगे मौसम में याद आते हो,</p>
+                    <p class="text-lg">जैसे मेरे दिल की बारिश हो तुम</p>
+                    <p class="text-sm text-muted-foreground mt-4 italic">~ बारिश के दिनों में Alka को समर्पित</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Poetry Section 7 -->
+        <div id="poetry-7" class="poetry-section">
+            <div class="poetry-card rounded-lg p-6 mb-6 fade-in">
+                <!-- Musical instruments in romantic setting -->
+                <div class="relative h-48 mb-6 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Musical instruments" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                </div>
+                <h2 class="text-2xl font-serif font-bold text-accent mb-4 text-center">प्यार का गीत</h2>
+                <div class="romantic-text text-center space-y-3">
+                    <p class="text-lg">तुम्हारे नाम का गीत गाता है दिल,</p>
+                    <p class="text-lg">Alka, Alka हर धड़कन में</p>
+                    <p class="text-lg text-accent">प्यार की धुन में बजता रहता है,</p>
+                    <p class="text-lg">तुम्हारे इश्क़ का तराना</p>
+                    <p class="text-sm text-muted-foreground mt-4 italic">~ Alka के नाम का सबसे खूबसूरत गीत</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Poetry Section 8 -->
+        <div id="poetry-8" class="poetry-section">
+            <div class="poetry-card rounded-lg p-6 mb-6 fade-in">
+                <!-- Close-up of beautiful eyes -->
+                <div class="relative h-48 mb-6 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1516726817505-f5ed825624d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Beautiful eyes closeup" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                </div>
+                <h2 class="text-2xl font-serif font-bold text-accent mb-4 text-center">तुम्हारी नजरें</h2>
+                <div class="romantic-text text-center space-y-3">
+                    <p class="text-lg">Alka तुम्हारी आंखों में समंदर है,</p>
+                    <p class="text-lg">जिसमें डूबना चाहता हूं हमेशा</p>
+                    <p class="text-lg text-accent">एक नजर में छुपी है हजारों बातें,</p>
+                    <p class="text-lg">जो कहे बिना ही समझा देती हो</p>
+                    <p class="text-sm text-muted-foreground mt-4 italic">~ Alka की खूबसूरत आंखों के नाम</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Poetry Section 9 -->
+        <div id="poetry-9" class="poetry-section">
+            <div class="poetry-card rounded-lg p-6 mb-6 fade-in">
+                <!-- Hands holding together -->
+                <div class="relative h-48 mb-6 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Hands holding together" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                </div>
+                <h2 class="text-2xl font-serif font-bold text-accent mb-4 text-center">वादे</h2>
+                <div class="romantic-text text-center space-y-3">
+                    <p class="text-lg">Alka से किया है वादा मैंने,</p>
+                    <p class="text-lg">साथ निभाऊंगा जिंदगी भर</p>
+                    <p class="text-lg text-accent">तुम्हारे प्यार में खो जाना है,</p>
+                    <p class="text-lg">और तुम्हारे साथ खुद को पा जाना है</p>
+                    <p class="text-sm text-muted-foreground mt-4 italic">~ Alka को किए गए वादों का इकरार</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Poetry Section 10 -->
+        <div id="poetry-10" class="poetry-section">
+            <div class="poetry-card rounded-lg p-6 mb-6 fade-in">
+                <!-- Infinity symbol in nature -->
+                <div class="relative h-48 mb-6 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Eternal love concept" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
+                <h2 class="text-2xl font-serif font-bold text-accent mb-4 text-center">हमेशा के लिए</h2>
+                <div class="romantic-text text-center space-y-3">
+                    <p class="text-lg">सात जन्मों तक Alka तुम्हारा साथ चाहिए,</p>
+                    <p class="text-lg">हर जन्म में तुम्हीं से प्यार करूंगा</p>
+                    <p class="text-lg text-accent">अनंत काल तक चलेगा ये प्यार,</p>
+                    <p class="text-lg">क्योंकि तुम हो मेरी जिंदगी का आधार</p>
+                    <p class="text-sm text-muted-foreground mt-4 italic">~ Alka के साथ अनंत प्रेम का वादा</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Extra Poetry Sections for 10+ requirement -->
+        <!-- Poetry Section 11 -->
+        <div id="poetry-11" class="poetry-section">
+            <div class="poetry-card rounded-lg p-6 mb-6 fade-in">
+                <h2 class="text-2xl font-serif font-bold text-accent mb-4 text-center">तुम्हारी मुस्कान</h2>
+                <div class="romantic-text text-center space-y-3">
+                    <p class="text-lg">Alka तुम्हारी मुस्कान में जादू है,</p>
+                    <p class="text-lg">जो भुला देती है सारे गम</p>
+                    <p class="text-lg text-accent">एक मुस्कान से खुशियों का मेला,</p>
+                    <p class="text-lg">सजा देती हो मेरे दिल में</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Poetry Section 12 -->
+        <div id="poetry-12" class="poetry-section">
+            <div class="poetry-card rounded-lg p-6 mb-6 fade-in">
+                <h2 class="text-2xl font-serif font-bold text-accent mb-4 text-center">इश्क़ की शुरुआत</h2>
+                <div class="romantic-text text-center space-y-3">
+                    <p class="text-lg">जब से मिली हो Alka तुम,</p>
+                    <p class="text-lg">प्यार का मतलब समझ आया</p>
+                    <p class="text-lg text-accent">इश्क़ क्या होता है जानने के लिए,</p>
+                    <p class="text-lg">तुम्हारा इंतजार करना पड़ा था</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 text-center py-8 border-t border-border">
+        <div class="text-accent text-lg mb-2">
+            <i class="fas fa-heart text-primary"></i>
+            बनाया गया प्यार के साथ
+            <i class="fas fa-heart text-primary"></i>
+        </div>
+        <p class="text-muted-foreground text-sm">Alka के लिए खास</p>
+    </footer>
+
+    <script>
+        (function() {
+            let currentPoetry = 1;
+            
+            // Show specific poetry section
+            window.showPoetry = function(sectionNumber) {
+                // Hide all sections
+                const sections = document.querySelectorAll('.poetry-section');
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Show selected section
+                const targetSection = document.getElementById(`poetry-${sectionNumber}`);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                    currentPoetry = sectionNumber;
+                }
+                
+                // Update navigation buttons
+                const navButtons = document.querySelectorAll('.nav-item');
+                navButtons.forEach((button, index) => {
+                    if (index === sectionNumber - 1) {
+                        button.classList.remove('bg-secondary', 'text-secondary-foreground');
+                        button.classList.add('bg-primary', 'text-primary-foreground');
+                    } else {
+                        button.classList.remove('bg-primary', 'text-primary-foreground');
+                        button.classList.add('bg-secondary', 'text-secondary-foreground');
+                    }
+                });
+                
+                // Add fade-in animation
+                if (targetSection) {
+                    const card = targetSection.querySelector('.poetry-card');
+                    if (card) {
+                        card.classList.remove('fade-in');
+                        setTimeout(() => {
+                            card.classList.add('fade-in');
+                        }, 50);
+                    }
+                }
+                
+                // Scroll to top smoothly
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+            
+            // Create floating heart particles
+            function createHeartParticle() {
+                const heart = document.createElement('div');
+                heart.innerHTML = '💖';
+                heart.className = 'heart-particle';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.fontSize = (Math.random() * 10 + 10) + 'px';
+                heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                
+                document.body.appendChild(heart);
+                
+                setTimeout(() => {
+                    if (heart.parentNode) {
+                        heart.parentNode.removeChild(heart);
+                    }
+                }, 6000);
+            }
+            
+            // Create heart particles periodically
+            setInterval(createHeartParticle, 3000);
+            
+            // Add click effect to navigation buttons
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('.nav-item')) {
+                    const button = e.target.closest('.nav-item');
+                    button.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        button.style.transform = '';
+                    }, 150);
+                }
+            });
+            
+            // Add touch support for mobile
+            let touchStartY = 0;
+            let touchEndY = 0;
+            
+            document.addEventListener('touchstart', function(e) {
+                touchStartY = e.changedTouches[0].screenY;
+            });
+            
+            document.addEventListener('touchend', function(e) {
+                touchEndY = e.changedTouches[0].screenY;
+                handleSwipe();
+            });
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartY - touchEndY;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        // Swipe up - next poetry
+                        const nextPoetry = currentPoetry < 12 ? currentPoetry + 1 : 1;
+                        showPoetry(nextPoetry);
+                    } else {
+                        // Swipe down - previous poetry
+                        const prevPoetry = currentPoetry > 1 ? currentPoetry - 1 : 12;
+                        showPoetry(prevPoetry);
+                    }
+                }
+            }
+            
+            // Initialize with first poetry
+            showPoetry(1);
+        })();
+    </script>
+</body>
+</html>

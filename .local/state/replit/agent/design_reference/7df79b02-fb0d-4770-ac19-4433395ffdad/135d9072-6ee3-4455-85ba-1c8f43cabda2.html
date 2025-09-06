@@ -1,0 +1,840 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alka - My Love, My Poetry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                borderRadius: {
+                    lg: "var(--radius)",
+                    md: "calc(var(--radius) - 2px)",
+                    sm: "calc(var(--radius) - 4px)",
+                },
+                colors: {
+                    background: "var(--background)",
+                    foreground: "var(--foreground)",
+                    card: {
+                        DEFAULT: "var(--card)",
+                        foreground: "var(--card-foreground)",
+                    },
+                    primary: {
+                        DEFAULT: "var(--primary)",
+                        foreground: "var(--primary-foreground)",
+                    },
+                    secondary: {
+                        DEFAULT: "var(--secondary)",
+                        foreground: "var(--secondary-foreground)",
+                    },
+                    muted: {
+                        DEFAULT: "var(--muted)",
+                        foreground: "var(--muted-foreground)",
+                    },
+                    accent: {
+                        DEFAULT: "var(--accent)",
+                        foreground: "var(--accent-foreground)",
+                    },
+                    destructive: {
+                        DEFAULT: "var(--destructive)",
+                        foreground: "var(--destructive-foreground)",
+                    },
+                    border: "var(--border)",
+                    input: "var(--input)",
+                    ring: "var(--ring)",
+                },
+                fontFamily: {
+                    sans: ["Inter", "sans-serif"],
+                    hindi: ["Noto Sans Devanagari", "sans-serif"],
+                },
+                animation: {
+                    'float': 'float 3s ease-in-out infinite',
+                    'fade-in': 'fadeIn 0.6s ease-in-out',
+                    'slide-up': 'slideUp 0.8s ease-out',
+                    'heart-beat': 'heartBeat 1.5s ease-in-out infinite',
+                },
+                keyframes: {
+                    float: {
+                        '0%, 100%': { transform: 'translateY(0px)' },
+                        '50%': { transform: 'translateY(-10px)' },
+                    },
+                    fadeIn: {
+                        '0%': { opacity: '0', transform: 'translateY(20px)' },
+                        '100%': { opacity: '1', transform: 'translateY(0)' },
+                    },
+                    slideUp: {
+                        '0%': { opacity: '0', transform: 'translateY(40px)' },
+                        '100%': { opacity: '1', transform: 'translateY(0)' },
+                    },
+                    heartBeat: {
+                        '0%, 100%': { transform: 'scale(1)' },
+                        '50%': { transform: 'scale(1.1)' },
+                    },
+                }
+            }
+        }
+    }
+    </script>
+    
+    <style>
+    :root {
+        --background: hsl(25 30% 97%);
+        --foreground: hsl(220 15% 20%);
+        --card: hsl(0 0% 100%);
+        --card-foreground: hsl(220 15% 20%);
+        --primary: hsl(355 70% 50%);
+        --primary-foreground: hsl(0 0% 100%);
+        --secondary: hsl(340 60% 80%);
+        --secondary-foreground: hsl(220 15% 20%);
+        --muted: hsl(340 30% 95%);
+        --muted-foreground: hsl(220 15% 45%);
+        --accent: hsl(45 90% 70%);
+        --accent-foreground: hsl(220 15% 20%);
+        --destructive: hsl(0 70% 50%);
+        --destructive-foreground: hsl(0 0% 100%);
+        --border: hsl(340 20% 90%);
+        --input: hsl(340 20% 90%);
+        --ring: hsl(355 70% 50%);
+        --radius: 12px;
+    }
+
+    .floating-hearts {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .heart {
+        position: absolute;
+        font-size: 20px;
+        color: var(--primary);
+        opacity: 0.6;
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .heart:nth-child(2) { left: 20%; animation-delay: 1s; }
+    .heart:nth-child(3) { left: 40%; animation-delay: 2s; }
+    .heart:nth-child(4) { left: 60%; animation-delay: 0.5s; }
+    .heart:nth-child(5) { left: 80%; animation-delay: 1.5s; }
+
+    .poetry-gradient {
+        background: linear-gradient(135deg, hsl(355 70% 50% / 0.1), hsl(340 60% 80% / 0.1));
+    }
+
+    .romantic-shadow {
+        box-shadow: 0 10px 30px hsl(355 70% 50% / 0.1);
+    }
+    </style>
+</head>
+<body class="bg-background text-foreground font-sans overflow-x-hidden">
+    <!-- Floating Hearts Animation -->
+    <div class="floating-hearts">
+        <div class="heart"><i class="fas fa-heart"></i></div>
+        <div class="heart"><i class="fas fa-heart"></i></div>
+        <div class="heart"><i class="fas fa-heart"></i></div>
+        <div class="heart"><i class="fas fa-heart"></i></div>
+        <div class="heart"><i class="fas fa-heart"></i></div>
+    </div>
+
+    <!-- @COMPONENT: NavigationHeader -->
+    <header class="fixed top-0 w-full bg-card/80 backdrop-blur-md border-b border-border z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-heart text-primary text-xl animate-heart-beat"></i>
+                    <h1 class="text-xl font-bold text-primary">Alka - My Love</h1>
+                </div>
+                <button id="menuBtn" class="md:hidden text-primary">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#home" class="text-muted-foreground hover:text-primary transition-colors">Home</a>
+                    <a href="#poetry" class="text-muted-foreground hover:text-primary transition-colors">Poetry</a>
+                    <a href="#gallery" class="text-muted-foreground hover:text-primary transition-colors">Memories</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: NavigationHeader -->
+
+    <!-- @COMPONENT: MobileMenu -->
+    <div id="mobileMenu" class="fixed inset-0 bg-card/95 backdrop-blur-md z-40 hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#home" class="text-2xl text-primary hover:text-accent transition-colors">Home</a>
+            <a href="#poetry" class="text-2xl text-primary hover:text-accent transition-colors">Poetry</a>
+            <a href="#gallery" class="text-2xl text-primary hover:text-accent transition-colors">Memories</a>
+            <button id="closeMenu" class="absolute top-4 right-4 text-primary">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: MobileMenu -->
+
+    <!-- @COMPONENT: HeroSection -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20">
+        <!-- Romantic couple silhouettes in a dreamy sunset setting -->
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/30 to-accent/20"></div>
+        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" alt="Romantic couple silhouette" class="absolute inset-0 w-full h-full object-cover opacity-30" />
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
+            <div class="mb-6">
+                <i class="fas fa-heart text-6xl text-primary animate-heart-beat mb-4"></i>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-primary mb-6">
+                My Dear Alka
+            </h1>
+            <p class="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+                A collection of love poems written from the depths of my heart, dedicated to the most beautiful soul - Alka
+            </p>
+            <button onclick="scrollToPoetry()" class="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 romantic-shadow">
+                Read My Love Letters <i class="fas fa-arrow-down ml-2"></i>
+            </button>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- @COMPONENT: PoetryNavigation -->
+    <section id="poetry" class="py-20 bg-muted/30">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">Love Poetry Collection</h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">Each poem is a piece of my heart, written specially for you, Alka</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <!-- Poetry Card 1 -->
+                <div class="poetry-card bg-card rounded-xl p-6 romantic-shadow hover:scale-105 transition-all duration-300 cursor-pointer border border-border" onclick="showPoetry(1)">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-primary">First Meeting</h3>
+                        <i class="fas fa-heart text-accent"></i>
+                    </div>
+                    <p class="text-muted-foreground mb-4">The moment I first saw Alka...</p>
+                    <div class="poetry-gradient rounded-lg p-4">
+                        <p class="text-sm font-hindi text-center">पहली नज़र में ही अल्का...</p>
+                    </div>
+                </div>
+
+                <!-- Poetry Card 2 -->
+                <div class="poetry-card bg-card rounded-xl p-6 romantic-shadow hover:scale-105 transition-all duration-300 cursor-pointer border border-border" onclick="showPoetry(2)">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-primary">Your Smile</h3>
+                        <i class="fas fa-smile text-accent"></i>
+                    </div>
+                    <p class="text-muted-foreground mb-4">About Alka's beautiful smile...</p>
+                    <div class="poetry-gradient rounded-lg p-4">
+                        <p class="text-sm font-hindi text-center">अल्का की मुस्कान में...</p>
+                    </div>
+                </div>
+
+                <!-- Poetry Card 3 -->
+                <div class="poetry-card bg-card rounded-xl p-6 romantic-shadow hover:scale-105 transition-all duration-300 cursor-pointer border border-border" onclick="showPoetry(3)">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-primary">Dreams Together</h3>
+                        <i class="fas fa-moon text-accent"></i>
+                    </div>
+                    <p class="text-muted-foreground mb-4">Our future dreams with Alka...</p>
+                    <div class="poetry-gradient rounded-lg p-4">
+                        <p class="text-sm font-hindi text-center">अल्का के साथ सपने...</p>
+                    </div>
+                </div>
+
+                <!-- Poetry Card 4 -->
+                <div class="poetry-card bg-card rounded-xl p-6 romantic-shadow hover:scale-105 transition-all duration-300 cursor-pointer border border-border" onclick="showPoetry(4)">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-primary">Missing You</h3>
+                        <i class="fas fa-cloud text-accent"></i>
+                    </div>
+                    <p class="text-muted-foreground mb-4">When Alka is away from me...</p>
+                    <div class="poetry-gradient rounded-lg p-4">
+                        <p class="text-sm font-hindi text-center">अल्का की याद में...</p>
+                    </div>
+                </div>
+
+                <!-- Poetry Card 5 -->
+                <div class="poetry-card bg-card rounded-xl p-6 romantic-shadow hover:scale-105 transition-all duration-300 cursor-pointer border border-border" onclick="showPoetry(5)">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-primary">Your Eyes</h3>
+                        <i class="fas fa-eye text-accent"></i>
+                    </div>
+                    <p class="text-muted-foreground mb-4">Lost in Alka's beautiful eyes...</p>
+                    <div class="poetry-gradient rounded-lg p-4">
+                        <p class="text-sm font-hindi text-center">अल्का की आँखों में...</p>
+                    </div>
+                </div>
+
+                <!-- Poetry Card 6 -->
+                <div class="poetry-card bg-card rounded-xl p-6 romantic-shadow hover:scale-105 transition-all duration-300 cursor-pointer border border-border" onclick="showPoetry(6)">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-primary">Promise of Love</h3>
+                        <i class="fas fa-ring text-accent"></i>
+                    </div>
+                    <p class="text-muted-foreground mb-4">My eternal promise to Alka...</p>
+                    <div class="poetry-gradient rounded-lg p-4">
+                        <p class="text-sm font-hindi text-center">अल्का से वादा...</p>
+                    </div>
+                </div>
+
+                <!-- Poetry Card 7 -->
+                <div class="poetry-card bg-card rounded-xl p-6 romantic-shadow hover:scale-105 transition-all duration-300 cursor-pointer border border-border" onclick="showPoetry(7)">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-primary">Morning Sunshine</h3>
+                        <i class="fas fa-sun text-accent"></i>
+                    </div>
+                    <p class="text-muted-foreground mb-4">Alka brings light to my mornings...</p>
+                    <div class="poetry-gradient rounded-lg p-4">
+                        <p class="text-sm font-hindi text-center">अल्का की रोशनी...</p>
+                    </div>
+                </div>
+
+                <!-- Poetry Card 8 -->
+                <div class="poetry-card bg-card rounded-xl p-6 romantic-shadow hover:scale-105 transition-all duration-300 cursor-pointer border border-border" onclick="showPoetry(8)">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-primary">Dance of Love</h3>
+                        <i class="fas fa-music text-accent"></i>
+                    </div>
+                    <p class="text-muted-foreground mb-4">Dancing with Alka in my dreams...</p>
+                    <div class="poetry-gradient rounded-lg p-4">
+                        <p class="text-sm font-hindi text-center">अल्का के साथ नृत्य...</p>
+                    </div>
+                </div>
+
+                <!-- Poetry Card 9 -->
+                <div class="poetry-card bg-card rounded-xl p-6 romantic-shadow hover:scale-105 transition-all duration-300 cursor-pointer border border-border" onclick="showPoetry(9)">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-primary">Forever Yours</h3>
+                        <i class="fas fa-infinity text-accent"></i>
+                    </div>
+                    <p class="text-muted-foreground mb-4">My eternal devotion to Alka...</p>
+                    <div class="poetry-gradient rounded-lg p-4">
+                        <p class="text-sm font-hindi text-center">अल्का के लिए हमेशा...</p>
+                    </div>
+                </div>
+
+                <!-- Poetry Card 10 -->
+                <div class="poetry-card bg-card rounded-xl p-6 romantic-shadow hover:scale-105 transition-all duration-300 cursor-pointer border border-border" onclick="showPoetry(10)">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-primary">My Queen</h3>
+                        <i class="fas fa-crown text-accent"></i>
+                    </div>
+                    <p class="text-muted-foreground mb-4">Alka, the queen of my heart...</p>
+                    <div class="poetry-gradient rounded-lg p-4">
+                        <p class="text-sm font-hindi text-center">अल्का मेरी रानी...</p>
+                    </div>
+                </div>
+
+                <!-- Poetry Card 11 -->
+                <div class="poetry-card bg-card rounded-xl p-6 romantic-shadow hover:scale-105 transition-all duration-300 cursor-pointer border border-border" onclick="showPoetry(11)">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-primary">Moonlit Nights</h3>
+                        <i class="fas fa-moon text-accent"></i>
+                    </div>
+                    <p class="text-muted-foreground mb-4">Thinking of Alka under the stars...</p>
+                    <div class="poetry-gradient rounded-lg p-4">
+                        <p class="text-sm font-hindi text-center">चाँदनी रात में अल्का...</p>
+                    </div>
+                </div>
+
+                <!-- Poetry Card 12 -->
+                <div class="poetry-card bg-card rounded-xl p-6 romantic-shadow hover:scale-105 transition-all duration-300 cursor-pointer border border-border" onclick="showPoetry(12)">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-primary">Garden of Love</h3>
+                        <i class="fas fa-seedling text-accent"></i>
+                    </div>
+                    <p class="text-muted-foreground mb-4">Our love grows like flowers...</p>
+                    <div class="poetry-gradient rounded-lg p-4">
+                        <p class="text-sm font-hindi text-center">अल्का के प्रेम का बगीचा...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: PoetryNavigation -->
+
+    <!-- @COMPONENT: PoetryModal -->
+    <div id="poetryModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-card rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto romantic-shadow">
+            <div class="relative">
+                <!-- Heart decorations arranged in a romantic pattern -->
+                <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=300" alt="Romantic heart decorations" class="w-full h-48 object-cover rounded-t-2xl opacity-60" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-t-2xl"></div>
+                <button onclick="closePoetry()" class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="absolute bottom-4 left-6">
+                    <h3 id="poetryTitle" class="text-2xl font-bold text-white mb-2"></h3>
+                    <p id="poetrySubtitle" class="text-white/80"></p>
+                </div>
+            </div>
+            
+            <div class="p-8">
+                <div id="poetryContent" class="font-hindi text-lg leading-relaxed text-center space-y-4">
+                    <!-- Poetry content will be inserted here -->
+                </div>
+                
+                <div class="mt-8 pt-6 border-t border-border text-center">
+                    <p class="text-muted-foreground text-sm">Written with all my love for Alka ❤️</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: PoetryModal -->
+
+    <!-- @COMPONENT: GallerySection -->
+    <section id="gallery" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">Our Beautiful Memories</h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">Every moment with Alka is a treasure</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Romantic flowers roses in a bouquet arrangement -->
+                <div class="relative group overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1564419320461-6870880221ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" alt="Romantic red roses bouquet" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+
+                <!-- Love symbols hearts floating in romantic lighting -->
+                <div class="relative group overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1518635017498-87f514b751ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" alt="Floating heart symbols in romantic lighting" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+
+                <!-- Romantic couple silhouettes walking hand in hand at sunset -->
+                <div class="relative group overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" alt="Couple silhouettes walking hand in hand at sunset" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+
+                <!-- Heart decorations made of paper or fabric in soft lighting -->
+                <div class="relative group overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" alt="Handmade heart decorations in soft romantic lighting" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+
+                <!-- Romantic flowers roses in a garden setting -->
+                <div class="relative group overflow-hidden rounded-xl">
+                    <img src="https://pixabay.com/get/g3aac3f497be1ebd22c5e8ee6584f059eb98f727cb4af24d75d5ec409d1279bdb60ffdcf8e869e79eee9646d7736787cb703a2a9c11ccfef97de56b4b3c60b098_1280.jpg" alt="Pink roses blooming in a romantic garden" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+
+                <!-- Love symbols hearts carved in tree or stone -->
+                <div class="relative group overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" alt="Heart symbol carved in tree bark representing eternal love" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+
+                <!-- Romantic couple silhouettes dancing together -->
+                <div class="relative group overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" alt="Couple silhouettes dancing in romantic evening light" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+
+                <!-- Heart decorations with candles in romantic ambiance -->
+                <div class="relative group overflow-hidden rounded-xl">
+                    <img src="https://pixabay.com/get/g79fa24326be05e680a79f65d6d0160b96783edfb87c8f6726148262560c0dfd5c2fbf37d4c49e0e9d410dc886a240e46461d1318c5421073153a9efabcebf9c2_1280.jpg" alt="Heart decorations with romantic candles creating warm ambiance" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: GallerySection -->
+
+    <!-- @COMPONENT: LoveMessageSection -->
+    <section class="py-20 bg-gradient-to-br from-primary/10 via-secondary/20 to-accent/10">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <i class="fas fa-heart text-6xl text-primary mb-8 animate-heart-beat"></i>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">A Special Message for Alka</h2>
+                <div class="bg-card/80 backdrop-blur-sm rounded-2xl p-8 romantic-shadow">
+                    <p class="text-lg md:text-xl text-foreground leading-relaxed font-hindi mb-6">
+                        अल्का, तुम मेरी जिंदगी की सबसे खूबसूरत कहानी हो।<br>
+                        तुम्हारे बिना मेरा हर दिन अधूरा है।<br>
+                        तुम्हारी हँसी में मेरी खुशी छुपी है,<br>
+                        तुम्हारे प्यार में मेरी दुनिया बसी है।
+                    </p>
+                    <p class="text-muted-foreground italic">
+                        "Alka, you are the most beautiful story of my life. Every day is incomplete without you. My happiness is hidden in your laughter, my world resides in your love."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: LoveMessageSection -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-card border-t border-border py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-2 mb-4">
+                <i class="fas fa-heart text-primary animate-heart-beat"></i>
+                <span class="text-lg font-semibold text-primary">Made with Love for Alka</span>
+                <i class="fas fa-heart text-primary animate-heart-beat"></i>
+            </div>
+            <p class="text-muted-foreground">Every word, every design, every heartbeat - all for you ❤️</p>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+    // Navigation and UI interactions
+    (function() {
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+
+        menuBtn?.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMenu?.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    })();
+
+    function scrollToPoetry() {
+        document.getElementById('poetry').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    }
+
+    // Poetry content database
+    const poetryData = {
+        1: {
+            title: "First Meeting",
+            subtitle: "The moment that changed everything",
+            content: `पहली नज़र में ही अल्का,
+तुमने मेरा दिल चुरा लिया था।
+तुम्हारी मुस्कान की रोशनी में,
+मेरा प्यार जग गया था।
+
+वो पल था कितना खूबसूरत,
+जब तुमसे पहली बार मिला।
+अल्का, तुम्हारी आँखों में,
+मैंने अपना प्यार देखा था।
+
+तब से लेकर आज तक,
+तुम्हारे बिना जी नहीं सकता।
+अल्का, तुम हो मेरी जिंदगी,
+तुम्हारे बिना मैं कुछ भी नहीं।`
+        },
+        2: {
+            title: "Your Smile",
+            subtitle: "The sunshine of my life",
+            content: `अल्का की मुस्कान में,
+सूरज की रोशनी है।
+हर सुबह तुम्हारा चेहरा देखकर,
+मेरी जिंदगी में खुशी है।
+
+तुम्हारी हँसी की आवाज़,
+मेरे दिल को छू जाती है।
+अल्का, तुम्हारी खुशी में,
+मेरी सारी परेशानी भूल जाती है।
+
+जब तुम मुस्कराती हो,
+पूरी दुनिया रोशन हो जाती है।
+अल्का, तुम्हारे प्यार में,
+मेरी हर इच्छा पूरी हो जाती है।`
+        },
+        3: {
+            title: "Dreams Together",
+            subtitle: "Our beautiful future",
+            content: `अल्का के साथ सपने,
+कितने रंगीन लगते हैं।
+हम दोनों साथ चलेंगे,
+जीवन के हर मोड़ पर।
+
+तुम्हारे हाथ में हाथ डालकर,
+मैं दुनिया घूमना चाहता हूँ।
+अल्का, तुम्हारे साथ हर सपना,
+मैं हकीकत बनाना चाहता हूँ।
+
+एक छोटा सा घर हो,
+जहाँ हम दोनों रहें।
+अल्का, तुम्हारे प्यार में,
+हमेशा खुश रहें।`
+        },
+        4: {
+            title: "Missing You",
+            subtitle: "When you're away from me",
+            content: `अल्का की याद में,
+मेरा दिल तड़पता है।
+तुम्हारे बिना हर पल,
+बहुत लंबा लगता है।
+
+जब तुम पास नहीं होती,
+सब कुछ सूना लगता है।
+अल्का, तुम्हारी आवाज़ सुने बिना,
+मेरा दिल घबराता है।
+
+तुम्हारे मैसेज का इंतज़ार,
+हर वक्त करता रहता हूँ।
+अल्का, तुम्हारे प्यार में,
+खुद को खोता रहता हूँ।`
+        },
+        5: {
+            title: "Your Eyes",
+            subtitle: "Windows to my soul",
+            content: `अल्का की आँखों में,
+मैंने अपना प्यार देखा है।
+उन काली आँखों में,
+अपना भविष्य देखा है।
+
+जब तुम मुझे देखती हो,
+मेरा दिल तेज़ धड़कता है।
+अल्का, तुम्हारी नज़रों में,
+मेरा प्यार बिखरता है।
+
+तुम्हारी आँखों का जादू,
+मुझ पर चढ़ा है ऐसा।
+अल्का, तुम्हारे प्यार का,
+कोई दूसरा जोड़ नहीं वैसा।`
+        },
+        6: {
+            title: "Promise of Love",
+            subtitle: "My eternal commitment",
+            content: `अल्का से वादा है,
+तुम्हें हमेशा खुश रखूंगा।
+तुम्हारे हर सपने को,
+मैं हकीकत बनाऊंगा।
+
+जिंदगी के हर मोड़ पर,
+तुम्हारा साथ दूंगा।
+अल्का, तुम्हारे प्यार के लिए,
+अपनी जान भी दूंगा।
+
+यह प्रेम की कसम है,
+तुमसे जो मैंने खाई है।
+अल्का, तुम्हारे बिना,
+मेरी जिंदगी अधूरी है।`
+        },
+        7: {
+            title: "Morning Sunshine",
+            subtitle: "You brighten my every day",
+            content: `सुबह की पहली किरण,
+अल्का तुम्हारी याद दिलाती है।
+तुम्हारे प्यार की रोशनी,
+मेरे दिन को सुनहरा बनाती है।
+
+जब सूरज उगता है,
+तुम्हारा चेहरा याद आता है।
+अल्का, तुम्हारी मुस्कान,
+मेरे दिल को छू जाती है।
+
+हर नई सुबह के साथ,
+तुम्हारे प्यार का एहसास।
+अल्का, तुम हो मेरी जिंदगी का,
+सबसे खूबसूरत अहसास।`
+        },
+        8: {
+            title: "Dance of Love",
+            subtitle: "Moving together in harmony",
+            content: `अल्का के साथ नृत्य,
+कितना खूबसूरत लगता है।
+तुम्हारे साथ हर कदम,
+स्वर्ग सा महसूस होता है।
+
+संगीत की धुन पर,
+हम दोनों का प्यार नाचता है।
+अल्का, तुम्हारे साथ,
+मेरा दिल खुशी से गाता है।
+
+इस प्रेम की लय में,
+हमारा रिश्ता और गहरा होता है।
+अल्का, तुम्हारे प्यार में,
+मेरा हर सपना पूरा होता है।`
+        },
+        9: {
+            title: "Forever Yours",
+            subtitle: "My eternal love declaration",
+            content: `अल्का के लिए हमेशा,
+मैं अपना प्यार जताऊंगा।
+तुम्हारे बिना एक पल भी,
+मैं जी नहीं पाऊंगा।
+
+यह प्रेम अमर है,
+जो कभी खत्म नहीं होगा।
+अल्का, तुम्हारे साथ,
+मेरा यह रिश्ता कभी टूटेगा नहीं।
+
+सातों जन्मों तक,
+तुम्हारा साथ चाहता हूँ।
+अल्का, सिर्फ तुम्हारे लिए,
+मैं जीता हूँ और मरता हूँ।`
+        },
+        10: {
+            title: "My Queen",
+            subtitle: "You rule my heart",
+            content: `अल्का मेरी रानी,
+तुम हो मेरे दिल की मालकिन।
+तुम्हारे प्यार का राज,
+मेरे दिल में बसा है।
+
+हर फैसले में तुम्हारी राय,
+मेरे लिए सबसे कीमती है।
+अल्का, तुम्हारी खुशी,
+मेरे लिए सबसे जरूरी है।
+
+इस प्रेम के राज्य में,
+तुम हो एकमात्र रानी।
+अल्का, तुम्हारे प्यार की,
+मैं हूँ सच्चा दीवानी।`
+        },
+        11: {
+            title: "Moonlit Nights",
+            subtitle: "Thinking of you under the stars",
+            content: `चाँदनी रात में अल्का,
+तुम्हारी याद सताती है।
+तारों से भरे आसमान में,
+तुम्हारी तस्वीर दिखाई देती है।
+
+चाँद की रोशनी में,
+तुम्हारा चेहरा याद आता है।
+अल्का, इन खूबसूरत रातों में,
+तुम्हारा प्यार महसूस होता है।
+
+हर तारे से पूछता हूँ,
+क्या अल्का भी मुझे याद करती है?
+इन चाँदनी रातों में,
+क्या उसका दिल भी तड़पता है?`
+        },
+        12: {
+            title: "Garden of Love",
+            subtitle: "Our love blooms eternal",
+            content: `अल्का के प्रेम का बगीचा,
+कितना हरा-भरा है।
+हमारे प्यार के फूल,
+कितने खुशबूदार हैं।
+
+इस बगीचे में हर दिन,
+नए फूल खिलते रहते हैं।
+अल्का, तुम्हारे प्यार से,
+मेरे सपने पलते रहते हैं।
+
+यह प्रेम का बगीचा,
+हमेशा महकता रहेगा।
+अल्का, तुम्हारे साथ,
+यह प्यार बढ़ता रहेगा।`
+        }
+    };
+
+    function showPoetry(id) {
+        const modal = document.getElementById('poetryModal');
+        const poetry = poetryData[id];
+        
+        if (poetry) {
+            document.getElementById('poetryTitle').textContent = poetry.title;
+            document.getElementById('poetrySubtitle').textContent = poetry.subtitle;
+            
+            const content = poetry.content.split('\n').map(line => 
+                `<p class="text-center ${line.trim() === '' ? 'mb-4' : ''}">${line}</p>`
+            ).join('');
+            
+            document.getElementById('poetryContent').innerHTML = content;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Add entrance animation
+            const modalContent = modal.querySelector('.bg-card');
+            modalContent.classList.add('animate-slide-up');
+        }
+    }
+
+    function closePoetry() {
+        const modal = document.getElementById('poetryModal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('poetryModal')?.addEventListener('click', (e) => {
+        if (e.target.id === 'poetryModal') {
+            closePoetry();
+        }
+    });
+
+    // Smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Add romantic sparkle effect on scroll
+    let ticking = false;
+    function updateScrollEffects() {
+        const scrolled = window.pageYOffset;
+        const parallax = document.querySelector('#home img');
+        if (parallax) {
+            parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+        }
+        ticking = false;
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateScrollEffects);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', requestTick);
+    
+    // Add romantic hover effects to cards
+    document.querySelectorAll('.poetry-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+
+    // Create random floating hearts
+    function createFloatingHeart() {
+        const heart = document.createElement('div');
+        heart.innerHTML = '<i class="fas fa-heart"></i>';
+        heart.className = 'fixed text-primary opacity-20 text-lg pointer-events-none z-0';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.top = '100%';
+        heart.style.animation = `float ${3 + Math.random() * 2}s ease-in-out infinite`;
+        
+        document.body.appendChild(heart);
+        
+        // Remove heart after animation
+        setTimeout(() => {
+            if (heart.parentNode) {
+                heart.parentNode.removeChild(heart);
+            }
+        }, 5000);
+    }
+
+    // Create floating hearts periodically
+    setInterval(createFloatingHeart, 3000);
+    </script>
+</body>
+</html>
