@@ -56,26 +56,9 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on the port specified in the environment variable PORT
-  // Other ports are firewalled. Default to 5000 if not specified.
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
-  let currentPort = parseInt(process.env.PORT || '5000', 10);
-  const maxPort = currentPort + 5; // Try up to 5 ports if default is in use
-
-  const startServer = () => {
-    server.listen(currentPort, "0.0.0.0", () => {
-      log(`serving on port ${currentPort}`);
-    }).on('error', (err: NodeJS.ErrnoException) => {
-      if (err.code === 'EADDRINUSE' && currentPort < maxPort) {
-        log(`Port ${currentPort} is in use, trying ${currentPort + 1}...`);
-        currentPort++;
-        startServer(); // Try again with the next port
-      } else {
-        throw err; // Re-throw other errors
-      }
-    });
-  };
-
-  startServer(); // Initial call to start the server
+  // Remove port listening and fallback logic as Vercel manages the port.
+  // The server variable is still passed to setupVite for HMR in development,
+  // but it will no longer be used for listening.
 })();
+
+export default app;
